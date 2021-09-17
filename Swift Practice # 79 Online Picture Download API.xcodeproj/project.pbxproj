@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		2D56884526F46499004AB279 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D56884326F46499004AB279 /* Main.storyboard */; };
 		2D56884726F46499004AB279 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D56884626F46499004AB279 /* Assets.xcassets */; };
 		2D56884A26F46499004AB279 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D56884826F46499004AB279 /* LaunchScreen.storyboard */; };
+		2D56885326F47DBB004AB279 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2D56885226F47DBB004AB279 /* Kingfisher */; };
+		2D56885726F48493004AB279 /* SIngleWebSinglePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56885626F48493004AB279 /* SIngleWebSinglePhotoViewController.swift */; };
+		2D56885926F49D49004AB279 /* FourNasaImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56885826F49D49004AB279 /* FourNasaImageViewController.swift */; };
+		2D56885B26F4AF5F004AB279 /* FourAPIPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56885A26F4AF5F004AB279 /* FourAPIPhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,9 @@
 		2D56884626F46499004AB279 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D56884926F46499004AB279 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D56884B26F46499004AB279 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D56885626F48493004AB279 /* SIngleWebSinglePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIngleWebSinglePhotoViewController.swift; sourceTree = "<group>"; };
+		2D56885826F49D49004AB279 /* FourNasaImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourNasaImageViewController.swift; sourceTree = "<group>"; };
+		2D56885A26F4AF5F004AB279 /* FourAPIPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourAPIPhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D56885326F47DBB004AB279 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,8 +66,11 @@
 			children = (
 				2D56883D26F46499004AB279 /* AppDelegate.swift */,
 				2D56883F26F46499004AB279 /* SceneDelegate.swift */,
-				2D56884126F46499004AB279 /* ViewController.swift */,
 				2D56884326F46499004AB279 /* Main.storyboard */,
+				2D56884126F46499004AB279 /* ViewController.swift */,
+				2D56885626F48493004AB279 /* SIngleWebSinglePhotoViewController.swift */,
+				2D56885826F49D49004AB279 /* FourNasaImageViewController.swift */,
+				2D56885A26F4AF5F004AB279 /* FourAPIPhotoViewController.swift */,
 				2D56884626F46499004AB279 /* Assets.xcassets */,
 				2D56884826F46499004AB279 /* LaunchScreen.storyboard */,
 				2D56884B26F46499004AB279 /* Info.plist */,
@@ -83,6 +94,9 @@
 			dependencies = (
 			);
 			name = "Swift Practice # 79 Online Picture Download API";
+			packageProductDependencies = (
+				2D56885226F47DBB004AB279 /* Kingfisher */,
+			);
 			productName = "Swift Practice # 79 Online Picture Download API";
 			productReference = 2D56883A26F46499004AB279 /* Swift Practice # 79 Online Picture Download API.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 2D56883126F46499004AB279;
+			packageReferences = (
+				2D56885126F47DBB004AB279 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 2D56883B26F46499004AB279 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +156,9 @@
 			files = (
 				2D56884226F46499004AB279 /* ViewController.swift in Sources */,
 				2D56883E26F46499004AB279 /* AppDelegate.swift in Sources */,
+				2D56885926F49D49004AB279 /* FourNasaImageViewController.swift in Sources */,
+				2D56885726F48493004AB279 /* SIngleWebSinglePhotoViewController.swift in Sources */,
+				2D56885B26F4AF5F004AB279 /* FourAPIPhotoViewController.swift in Sources */,
 				2D56884026F46499004AB279 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +361,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2D56885126F47DBB004AB279 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2D56885226F47DBB004AB279 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D56885126F47DBB004AB279 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2D56883226F46499004AB279 /* Project object */;
 }

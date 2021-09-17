@@ -1,24 +1,397 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bfr-MG-z3M">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Nasa單頁-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swift_Practice___79_Online_Picture_Download_API" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ODr-Xa-K48">
+                                <rect key="frame" x="27" y="125" width="360" height="392"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="W2i-7a-r9D">
+                                <rect key="frame" x="57" y="603" width="300" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="FiN-Ic-GgT">
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自動輪播" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5je-hJ-fE9">
+                                                <rect key="frame" x="0.0" y="20" width="69.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="abX-lt-RiZ">
+                                                <rect key="frame" x="83.5" y="14.5" width="71.5" height="31"/>
+                                                <connections>
+                                                    <action selector="autoChageNasaPhoto:" destination="BYZ-38-t0r" eventType="valueChanged" id="93Y-p8-Bd7"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.94521477809999999" blue="0.84615877989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6w-a8-pgQ">
+                                        <rect key="frame" x="173" y="0.0" width="127" height="60"/>
+                                        <color key="backgroundColor" red="0.55623406171798706" green="0.55752915143966675" blue="0.91593962907791138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="點我換圖">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeNasaImag:" destination="BYZ-38-t0r" eventType="touchUpInside" id="atC-jh-08k"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="UuD-aA-Ifd"/>
+                                    <constraint firstAttribute="width" constant="300" id="Vxv-DK-hzz"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="WNO-7m-qBc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="hRX-cg-Ax7"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.95958536863327026" green="0.90864449739456177" blue="0.84333449602127075" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="W2i-7a-r9D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Nh-Sf-ha6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="W2i-7a-r9D" secondAttribute="bottom" constant="150" id="Mnf-l0-CbA"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Nasa單頁" id="17n-9Y-Xqc"/>
+                    <connections>
+                        <outlet property="starPhotoImageView" destination="ODr-Xa-K48" id="b6b-Sa-ENy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-988" y="-97"/>
+        </scene>
+        <!--API單頁-->
+        <scene sceneID="zfk-tf-yKF">
+            <objects>
+                <viewController id="1Uk-6E-3zY" customClass="SIngleWebSinglePhotoViewController" customModule="Swift_Practice___79_Online_Picture_Download_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="USr-t5-JEG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Yb-Po-nLz">
+                                <rect key="frame" x="57" y="164" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="E8m-dZ-Cd7"/>
+                                    <constraint firstAttribute="height" constant="300" id="Lwc-Aq-Ycf"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9hf-Z4-Drh">
+                                <rect key="frame" x="57" y="553" width="300" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Uso-UJ-Ylc">
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自動輪播" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9x-ot-wPa">
+                                                <rect key="frame" x="0.0" y="20" width="69.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="ahm-mj-sLt">
+                                                <rect key="frame" x="83.5" y="14.5" width="71.5" height="31"/>
+                                                <connections>
+                                                    <action selector="autoChangePhoto:" destination="1Uk-6E-3zY" eventType="valueChanged" id="g15-Yh-vzV"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.94521477810637844" blue="0.84615877985393351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WtI-xz-NNZ">
+                                        <rect key="frame" x="173" y="0.0" width="127" height="60"/>
+                                        <color key="backgroundColor" red="0.2156862745" green="0.51804055360000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="點我換圖">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="touchToChangeView:" destination="1Uk-6E-3zY" eventType="touchUpInside" id="W9Z-ic-Lz6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="E6B-kT-hL7"/>
+                                    <constraint firstAttribute="height" constant="60" id="L3x-HM-fhh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uvm-hp-2EI"/>
+                        <color key="backgroundColor" red="1" green="0.96183815305430942" blue="0.95960610536326318" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="9hf-Z4-Drh" firstAttribute="centerX" secondItem="USr-t5-JEG" secondAttribute="centerX" id="NwB-Lg-Qkl"/>
+                            <constraint firstItem="7Yb-Po-nLz" firstAttribute="top" secondItem="uvm-hp-2EI" secondAttribute="top" constant="120" id="Z68-qA-IG9"/>
+                            <constraint firstItem="7Yb-Po-nLz" firstAttribute="leading" secondItem="uvm-hp-2EI" secondAttribute="leading" constant="57" id="dRV-kG-wRU"/>
+                            <constraint firstItem="uvm-hp-2EI" firstAttribute="bottom" secondItem="9hf-Z4-Drh" secondAttribute="bottom" constant="200" id="h4L-uy-BRJ"/>
+                            <constraint firstItem="uvm-hp-2EI" firstAttribute="trailing" secondItem="7Yb-Po-nLz" secondAttribute="trailing" constant="57" id="kp4-tB-s2O"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="API單頁" id="mxo-zM-bfA"/>
+                    <connections>
+                        <outlet property="showWebImageView" destination="7Yb-Po-nLz" id="nnt-Bw-cXZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vev-rF-QWD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-988" y="599"/>
+        </scene>
+        <!--Nasa四頁-->
+        <scene sceneID="jY4-Ly-w57">
+            <objects>
+                <viewController id="A4M-fJ-Wf9" customClass="FourNasaImageViewController" customModule="Swift_Practice___79_Online_Picture_Download_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AiU-kZ-8Qx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="eZ3-K3-UTF">
+                                <rect key="frame" x="20.5" y="164" width="373" height="358.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="znG-ya-aUD">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="178"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RnA-vN-QOT">
+                                                <rect key="frame" x="0.0" y="0.0" width="185.5" height="178"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FdA-IW-bF2">
+                                                <rect key="frame" x="187.5" y="0.0" width="185.5" height="178"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="9pF-A5-2rp">
+                                        <rect key="frame" x="0.0" y="180" width="373" height="178.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pjg-VV-0cC">
+                                                <rect key="frame" x="0.0" y="0.0" width="185.5" height="178.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZVU-1s-X0I">
+                                                <rect key="frame" x="187.5" y="0.0" width="185.5" height="178.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Rpg-zA-rxa">
+                                <rect key="frame" x="57" y="613" width="300" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="xLS-vi-o1x">
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自動輪播" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05S-vs-qj6">
+                                                <rect key="frame" x="0.0" y="20" width="69.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="mGO-a6-eV6">
+                                                <rect key="frame" x="83.5" y="14.5" width="71.5" height="31"/>
+                                                <connections>
+                                                    <action selector="fourNasaChangePhoto:" destination="A4M-fJ-Wf9" eventType="valueChanged" id="TfD-vW-GVX"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.94521477809999999" blue="0.84615877989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssr-HW-jqQ">
+                                        <rect key="frame" x="173" y="0.0" width="127" height="60"/>
+                                        <color key="backgroundColor" red="0.51528817415237427" green="0.93132549524307251" blue="0.16117790341377258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="點我換圖">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="touchToChangeFourPhoto:" destination="A4M-fJ-Wf9" eventType="touchUpInside" id="Gvo-FC-bvb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="GhA-Jw-uyb"/>
+                                    <constraint firstAttribute="width" constant="300" id="NlX-15-mZC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="O8N-Hd-DpK"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="y0N-FR-OHx"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pHc-gh-aDz"/>
+                        <color key="backgroundColor" red="0.95249038934707642" green="0.90997952222824097" blue="0.81395822763442993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eZ3-K3-UTF" firstAttribute="top" secondItem="pHc-gh-aDz" secondAttribute="top" constant="120" id="3jh-NM-Dh0"/>
+                            <constraint firstItem="eZ3-K3-UTF" firstAttribute="height" secondItem="AiU-kZ-8Qx" secondAttribute="height" multiplier="0.4" id="4Vr-J8-A00"/>
+                            <constraint firstItem="Rpg-zA-rxa" firstAttribute="centerX" secondItem="AiU-kZ-8Qx" secondAttribute="centerX" id="8q1-Mi-g97"/>
+                            <constraint firstItem="eZ3-K3-UTF" firstAttribute="width" secondItem="AiU-kZ-8Qx" secondAttribute="width" multiplier="0.9" id="Awc-N3-Clu"/>
+                            <constraint firstItem="eZ3-K3-UTF" firstAttribute="centerX" secondItem="AiU-kZ-8Qx" secondAttribute="centerX" id="hU0-Za-Syj"/>
+                            <constraint firstItem="pHc-gh-aDz" firstAttribute="bottom" secondItem="Rpg-zA-rxa" secondAttribute="bottom" constant="140" id="oBi-AZ-ixF"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Nasa四頁" id="bOg-ND-jdH"/>
+                    <connections>
+                        <outletCollection property="nasaImageCollection" destination="RnA-vN-QOT" collectionClass="NSMutableArray" id="jPf-9Q-5DJ"/>
+                        <outletCollection property="nasaImageCollection" destination="FdA-IW-bF2" collectionClass="NSMutableArray" id="Yvx-Bq-Mig"/>
+                        <outletCollection property="nasaImageCollection" destination="Pjg-VV-0cC" collectionClass="NSMutableArray" id="N83-M4-47E"/>
+                        <outletCollection property="nasaImageCollection" destination="ZVU-1s-X0I" collectionClass="NSMutableArray" id="hB4-qO-pHw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K4H-Is-INI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="-97"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ZPi-Wc-RV8">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bfr-MG-z3M" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V4u-cX-Itf">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Qrs-Z2-CIp"/>
+                        <segue destination="1Uk-6E-3zY" kind="relationship" relationship="viewControllers" id="M3l-pc-bx1"/>
+                        <segue destination="A4M-fJ-Wf9" kind="relationship" relationship="viewControllers" id="Jnv-l7-ccR"/>
+                        <segue destination="adp-bA-CZD" kind="relationship" relationship="viewControllers" id="geK-AO-RN6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LaE-Ia-vJu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
+        </scene>
+        <!--API四頁-->
+        <scene sceneID="UeJ-y6-giV">
+            <objects>
+                <viewController id="adp-bA-CZD" customClass="FourAPIPhotoViewController" customModule="Swift_Practice___79_Online_Picture_Download_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YpE-tU-je7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Po8-oF-HCT">
+                                <rect key="frame" x="20.5" y="164" width="373" height="358.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ZTO-1f-sxO">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="178"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QkG-DQ-gs6">
+                                                <rect key="frame" x="0.0" y="0.0" width="185.5" height="178"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="88N-ay-IDm">
+                                                <rect key="frame" x="187.5" y="0.0" width="185.5" height="178"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="PtI-Su-Sco">
+                                        <rect key="frame" x="0.0" y="180" width="373" height="178.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tzh-5r-hl5">
+                                                <rect key="frame" x="0.0" y="0.0" width="185.5" height="178.5"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fBI-Bw-w85">
+                                                <rect key="frame" x="187.5" y="0.0" width="185.5" height="178.5"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="03c-xo-akU">
+                                <rect key="frame" x="57" y="633" width="300" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="7Ia-iJ-805">
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自動輪播" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVZ-it-P5Q">
+                                                <rect key="frame" x="0.0" y="20" width="69.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Exj-1U-wCg">
+                                                <rect key="frame" x="83.5" y="14.5" width="71.5" height="31"/>
+                                                <connections>
+                                                    <action selector="autoFourAPIChange:" destination="adp-bA-CZD" eventType="valueChanged" id="iBs-3Q-3KV"/>
+                                                    <action selector="fourNasaChangePhoto:" destination="A4M-fJ-Wf9" eventType="valueChanged" id="3OA-1P-wdP"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.94521477809999999" blue="0.84615877989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhH-iq-vd1">
+                                        <rect key="frame" x="173" y="0.0" width="127" height="60"/>
+                                        <color key="backgroundColor" red="0.65018045902252197" green="0.5881924033164978" blue="0.91681581735610962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="點我換圖">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeFourAPIPhoto:" destination="adp-bA-CZD" eventType="touchUpInside" id="OJB-YI-r0X"/>
+                                            <action selector="touchToChangeFourPhoto:" destination="A4M-fJ-Wf9" eventType="touchUpInside" id="2xb-Ie-1p8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="59f-dO-KcQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="62a-C7-dUq"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="DDy-UN-6ek"/>
+                                    <constraint firstAttribute="width" constant="300" id="Our-Zg-Cf3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Vft-3b-Tet"/>
+                                    <constraint firstAttribute="height" constant="60" id="oLP-ug-ZaU"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Yqb-bZ-diw"/>
+                        <color key="backgroundColor" red="0.97899848222732544" green="0.96269375085830688" blue="0.93181842565536499" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Po8-oF-HCT" firstAttribute="width" secondItem="YpE-tU-je7" secondAttribute="width" multiplier="0.9" id="689-LT-eNG"/>
+                            <constraint firstItem="Po8-oF-HCT" firstAttribute="centerX" secondItem="YpE-tU-je7" secondAttribute="centerX" id="KYt-yL-w6G"/>
+                            <constraint firstItem="Po8-oF-HCT" firstAttribute="height" secondItem="YpE-tU-je7" secondAttribute="height" multiplier="0.4" id="RIe-GP-enU"/>
+                            <constraint firstItem="03c-xo-akU" firstAttribute="centerX" secondItem="YpE-tU-je7" secondAttribute="centerX" id="b2c-ow-Az5"/>
+                            <constraint firstItem="Po8-oF-HCT" firstAttribute="top" secondItem="Yqb-bZ-diw" secondAttribute="top" constant="120" id="bvq-u4-hRB"/>
+                            <constraint firstItem="Yqb-bZ-diw" firstAttribute="bottom" secondItem="03c-xo-akU" secondAttribute="bottom" constant="120" id="jX6-MP-XHa"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="API四頁" id="1g6-Zq-b3f"/>
+                    <connections>
+                        <outletCollection property="webAPIImageCollection" destination="QkG-DQ-gs6" collectionClass="NSMutableArray" id="o1n-i9-EFZ"/>
+                        <outletCollection property="webAPIImageCollection" destination="88N-ay-IDm" collectionClass="NSMutableArray" id="VJJ-RX-YyD"/>
+                        <outletCollection property="webAPIImageCollection" destination="tzh-5r-hl5" collectionClass="NSMutableArray" id="iL0-DW-y2o"/>
+                        <outletCollection property="webAPIImageCollection" destination="fBI-Bw-w85" collectionClass="NSMutableArray" id="pUf-aF-3Hx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QMW-xt-4Ld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="599"/>
         </scene>
     </scenes>
 </document>
